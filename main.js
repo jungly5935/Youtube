@@ -2,8 +2,8 @@ const moreBtn = document.querySelector('.info .metadata .moreBtn');
 const title = document.querySelector('.info .metadata .title');
 const actionBtn = document.querySelectorAll('.info .actions button');
 const subscribe = document.querySelector('.info .channel .subscribe')
-const upNextmoreBtn = document.querySelector('.upNext .item .moreBtn');
-const upNextlist = document.querySelector('.upNext .item .moreBtn_list')
+const upNextmoreBtn = document.querySelectorAll('.upNext .item .moreBtn');
+const upNextlist = document.querySelectorAll('.upNext .item .moreBtn_list')
 
 moreBtn.addEventListener('click', ()=>{
     moreBtn.classList.toggle('clicked');
@@ -29,8 +29,10 @@ subscribe.addEventListener('click', () => {
     }  
 })
 
-upNextmoreBtn.addEventListener('click', ()=> {
+for(let i=0;i<upNextlist.length;i++){
+upNextmoreBtn[i].addEventListener('click', ()=> {
     // 작은 서브메뉴 나타나게 하기
-    upNextlist.classList.toggle('active');
+    upNextlist[i].classList.toggle('active');
 
 })
+}
